@@ -89,28 +89,28 @@
                                 DurationViewHelpObject="0:0:2">
             <controls:HelpViewPanel.Script>
                 <controls:ScriptObject IsShow="True" NameHelpObject="tbIsShowHelp" DescriptionTemplate="{StaticResource descTemplate}" Description="Button show interactiviti help."/>
-                <controls:ScriptObject IsShow="False" NameHelpObject="tab1" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Tab 1"/>
-                <controls:ScriptObject IsShow="False" NameHelpObject="tab2" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Tab 2"/>
+                <controls:ScriptObject IsShow="False" NameHelpObject="tab1" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Tab 1"/>
+                <controls:ScriptObject IsShow="False" NameHelpObject="tab2" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Tab 2"/>
                 
                 <!--ViewOne-->
-                <controls:ScriptObject NameHelpObject="btn1" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 1"/>
-                <controls:ScriptObject NameHelpObject="img1" DescriptionTemplate="{StaticResource descTopTemplate}" Description="Desctiption of Image 1"/>
-                <controls:ScriptObject NameHelpObject="btn2" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 2"/>
-                <controls:ScriptObject NameHelpObject="btn3" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 3"/>
+                <controls:ScriptObject NameHelpObject="btn1" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 1"/>
+                <controls:ScriptObject NameHelpObject="img1" DescriptionTemplate="{StaticResource descTopTemplate}" Description="Description of Image 1"/>
+                <controls:ScriptObject NameHelpObject="btn2" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 2"/>
+                <controls:ScriptObject NameHelpObject="btn3" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 3"/>
                 <!--ViewTwo-->
-                <controls:ScriptObject NameHelpObject="btn4" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 4"/>
-                <controls:ScriptObject NameHelpObject="btn5" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 5"/>                
-                <controls:ScriptObject NameHelpObject="btn6" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 6"/>
+                <controls:ScriptObject NameHelpObject="btn4" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 4"/>
+                <controls:ScriptObject NameHelpObject="btn5" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 5"/>                
+                <controls:ScriptObject NameHelpObject="btn6" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 6"/>
                 <!--ViewThree-->
                 <controls:ScriptObject NameHelpObject="lbItems" 
                                        IsShowItem="True" 
-                                       Description="Desctiption of ListBox"
+                                       Description="Description of ListBox"
                                        DescriptionTemplate="{StaticResource descCCTemplate}" 
-                                       DescriptionItem="Desctiption of ListBoxItem"
+                                       DescriptionItem="Description of ListBoxItem"
                                        DescriptionItemTemplate="{StaticResource descCLTemplate}">
                     <controls:ScriptObject.Items>
-                        <controls:ScriptObject NameHelpObject="imgItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Desctiption of Image Item"/>
-                        <controls:ScriptObject NameHelpObject="contentItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Desctiption of Content Item"/>
+                        <controls:ScriptObject NameHelpObject="imgItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Description of Image Item"/>
+                        <controls:ScriptObject NameHelpObject="contentItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Description of Content Item"/>
                     </controls:ScriptObject.Items>
                 </controls:ScriptObject>
                                        
