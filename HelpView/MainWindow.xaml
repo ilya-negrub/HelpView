@@ -1,0 +1,125 @@
+﻿<Window x:Class="HelpView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpView"
+        xmlns:view="clr-namespace:HelpView.View"
+        xmlns:controls="clr-namespace:HelpView.Controls"
+        mc:Ignorable="d"        
+        Title="HelpView.MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ControlTemplate x:Key="descTemplate" TargetType="{x:Type ContentControl}">
+            <Border Background="#C8FFFFFF"                    
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"                    
+                    Margin="10"
+                    Padding="10"
+                    CornerRadius="20">
+                <Label Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="descTopTemplate" TargetType="{x:Type ContentControl}">
+            <Border Background="#C8FFFFFF"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"                    
+                    Margin="10"
+                    Padding="10"
+                    CornerRadius="20">
+                <Label Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="descCCTemplate" TargetType="{x:Type ContentControl}">
+            <Border Background="#C8FFFFFF"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"                    
+                    Margin="10"
+                    Padding="10"
+                    CornerRadius="20">
+                <Label Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="descCLTemplate" TargetType="{x:Type ContentControl}">
+            <Border Background="#C8FFFFFF"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"                    
+                    Margin="10"
+                    Padding="10"
+                    CornerRadius="20">
+                <Label Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+
+        <TabControl>
+            <TabItem Header="Tab One"
+                     x:Name="tab1"
+                     controls:HelpViewPanel.Attached="main">
+                <view:ViewOne/>
+            </TabItem>
+            <TabItem Header="Tab Two"
+                     x:Name="tab2"
+                     controls:HelpViewPanel.Attached="main">
+                <view:ViewTwo x:Name="tab2View"
+                              controls:HelpViewPanel.Attached="main"/>
+            </TabItem>
+            <TabItem Header="Tab Three">
+                <view:ViewThree/>
+            </TabItem>
+        </TabControl>
+
+
+        <ToggleButton x:Name="tbIsShowHelp" 
+                      IsChecked="{Binding IsShowHelp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Width="30" 
+                      Height="30"
+                      VerticalAlignment="Bottom"
+                      HorizontalAlignment="Right" 
+                      controls:HelpViewPanel.Attached="main">
+            <Image SnapsToDevicePixels="True" 
+                   Source="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Blue_question_mark_icon.svg/120px-Blue_question_mark_icon.svg.png"/>
+        </ToggleButton>
+
+        <controls:HelpViewPanel x:Name="main"
+                                IsShow="{Binding ElementName=tbIsShowHelp, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Background="#C8000000"                                
+                                DurationViewHelpObject="0:0:2">
+            <controls:HelpViewPanel.Script>
+                <controls:ScriptObject IsShow="True" NameHelpObject="tbIsShowHelp" DescriptionTemplate="{StaticResource descTemplate}" Description="Button show interactiviti help."/>
+                <controls:ScriptObject IsShow="False" NameHelpObject="tab1" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Tab 1"/>
+                <controls:ScriptObject IsShow="False" NameHelpObject="tab2" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Tab 2"/>
+                
+                <!--ViewOne-->
+                <controls:ScriptObject NameHelpObject="btn1" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 1"/>
+                <controls:ScriptObject NameHelpObject="img1" DescriptionTemplate="{StaticResource descTopTemplate}" Description="Desctiption of Image 1"/>
+                <controls:ScriptObject NameHelpObject="btn2" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 2"/>
+                <controls:ScriptObject NameHelpObject="btn3" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 3"/>
+                <!--ViewTwo-->
+                <controls:ScriptObject NameHelpObject="btn4" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 4"/>
+                <controls:ScriptObject NameHelpObject="btn5" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 5"/>                
+                <controls:ScriptObject NameHelpObject="btn6" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Button 6"/>
+                <!--ViewThree-->
+                <controls:ScriptObject NameHelpObject="lbItems" 
+                                       IsShowItem="True" 
+                                       Description="Desctiption of ListBox"
+                                       DescriptionTemplate="{StaticResource descCCTemplate}" 
+                                       DescriptionItem="Desctiption of ListBoxItem"
+                                       DescriptionItemTemplate="{StaticResource descCLTemplate}">
+                    <controls:ScriptObject.Items>
+                        <controls:ScriptObject NameHelpObject="imgItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Desctiption of Image Item"/>
+                        <controls:ScriptObject NameHelpObject="contentItem" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Desctiption of Content Item"/>
+                    </controls:ScriptObject.Items>
+                </controls:ScriptObject>
+                                       
+                <controls:ScriptObject NameHelpObject="gridContent1" DescriptionTemplate="{StaticResource descCLTemplate}" Description="Desctiption of Content"/>
+                <controls:ScriptObject NameHelpObject="lbContent" DescriptionTemplate="{StaticResource descTemplate}" Description="Desctiption of Label Content"/>
+                
+                
+            </controls:HelpViewPanel.Script>
+        </controls:HelpViewPanel>
+        
+    </Grid>
+</Window>
