@@ -11,7 +11,7 @@ namespace HelpView.ViewModel
 
         public MainViewModel()
         {
-            //Task.Factory.StartNew(Init);
+            Task.Factory.StartNew(Init);
         }
 
         private async void Init()
