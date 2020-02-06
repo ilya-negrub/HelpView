@@ -85,7 +85,7 @@
 
         <controls:HelpViewPanel x:Name="main"
                                 IsShow="{Binding ElementName=tbIsShowHelp, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                Background="#C8000000"                                
+                                Background="#C8000000"
                                 DurationViewHelpObject="0:0:2">
             <controls:HelpViewPanel.Script>
                 <controls:ScriptObject IsShow="True" NameHelpObject="tbIsShowHelp" DescriptionTemplate="{StaticResource descTemplate}" Description="Button show interactiviti help."/>
@@ -95,6 +95,7 @@
                 <!--ViewOne-->
                 <controls:ScriptObject NameHelpObject="btn1" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 1"/>
                 <controls:ScriptObject NameHelpObject="img1" DescriptionTemplate="{StaticResource descTopTemplate}" Description="Description of Image 1"/>
+                <controls:ScriptObject NameHelpObject="btn1" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 1"/>
                 <controls:ScriptObject NameHelpObject="btn2" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 2"/>
                 <controls:ScriptObject NameHelpObject="btn3" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 3"/>
                 <!--ViewTwo-->
@@ -102,8 +103,8 @@
                 <controls:ScriptObject NameHelpObject="btn5" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 5"/>                
                 <controls:ScriptObject NameHelpObject="btn6" DescriptionTemplate="{StaticResource descTemplate}" Description="Description of Button 6"/>
                 <!--ViewThree-->
-                <controls:ScriptObject NameHelpObject="lbItems" 
-                                       IsShowItem="True" 
+                <controls:ScriptObject NameHelpObject="lbItems"                                        
+                                       IsShowItem="False" 
                                        Description="Description of ListBox"
                                        DescriptionTemplate="{StaticResource descCCTemplate}" 
                                        DescriptionItem="Description of ListBoxItem"

@@ -142,10 +142,11 @@ namespace HelpView.Controls
 
             foreach (var itemScript in script)
             {
+
                 yield return itemScript;
 
                 //Search item in ItemsControl
-                if (itemScript.IsShowItem && itemScript.HelpObject.UIElement is ItemsControl itemsControl)
+                if (itemScript.HelpObject.UIElement is ItemsControl itemsControl)
                 {
                     HelpObject helpObjectItem = null;
 
@@ -172,13 +173,16 @@ namespace HelpView.Controls
 
                     if (helpObjectItem != null)
                     {
-                        yield return new ScriptObject()
+                        if (itemScript.IsShowItem)
                         {
-                            NameHelpObject = $"{itemScript.NameHelpObject}_Item",
-                            HelpObject = helpObjectItem,
-                            Description = string.IsNullOrEmpty(itemScript.DescriptionItem) ? itemScript.Description : itemScript.DescriptionItem,
-                            DescriptionTemplate = itemScript.DescriptionItemTemplate == null ? itemScript.DescriptionTemplate : itemScript.DescriptionItemTemplate,
-                        };
+                            yield return new ScriptObject()
+                            {
+                                NameHelpObject = $"{itemScript.NameHelpObject}_Item",
+                                HelpObject = helpObjectItem,
+                                Description = string.IsNullOrEmpty(itemScript.DescriptionItem) ? itemScript.Description : itemScript.DescriptionItem,
+                                DescriptionTemplate = itemScript.DescriptionItemTemplate == null ? itemScript.DescriptionTemplate : itemScript.DescriptionItemTemplate,
+                            };
+                        }
 
                         //Search controls in Item
                         if (itemScript.Items != null)
